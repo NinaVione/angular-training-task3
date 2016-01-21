@@ -1,11 +1,18 @@
 <!doctype>
 <html>
   <head>
-    <script src="bower_components\angular\angular.min.js"></script>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="public/css/styles.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/css/styles.css">
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="script.js"></script>
+    <script src="app/routes/routes.js"></script>
+    <script src="app/controllers/*"></script>
   </head>
-  <body>
+  <body ng-app="app">
+    <div class="container">
+      <div ui-view></div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,16 @@
+<form class="form-signin" ng-controller="userDataController">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <label for="inputEmail" class="sr-only">{{ user.email }}</label>
+  <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+  <label for="inputPassword" class="sr-only">{{ user.password }}</label>
+  <input type="password"class="form-control" placeholder="Password" required="">
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+    <div class="forgot-password">
+      <a>Forgot your password?</a>
+    </div>
+  </div>
+  <button ui-sref="home" class="btn btn-lg btn-info btn-block" type="submit" ng-click="signIn()">Sign in</button>
+</form>
