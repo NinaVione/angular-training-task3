@@ -1,9 +1,9 @@
-<form class="form-signin" ng-controller="userDataController">
+<form name="loginForm" class="form-signin" ng-controller="loginController" novalidate>
   <h2 class="form-signin-heading">Please sign in</h2>
-  <label for="inputEmail" class="sr-only">{{ user.email }}</label>
-  <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
-  <label for="inputPassword" class="sr-only">{{ user.password }}</label>
-  <input type="password"class="form-control" placeholder="Password" required="">
+  <input name="username" ng-model="username" class="form-control" placeholder="Username" required autofocus="">
+  <p ng-show="!loginForm.email.$invalid">Username is required.</p>
+  <input type="password" name="password" ng-model="password" class="form-control" placeholder="Password" required>
+  <p ng-show="!loginForm.password.$invalid">Password is required.</p>
   <div class="checkbox">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
@@ -12,5 +12,5 @@
       <a>Forgot your password?</a>
     </div>
   </div>
-  <button ui-sref="home" class="btn btn-lg btn-info btn-block" type="submit" ng-click="signIn()">Sign in</button>
+  <button ui-sref="home" class="btn btn-lg btn-info btn-block" type="submit" ng-click="signIn()" ng-disabled="loginForm.$invalid">Sign in</button>
 </form>
