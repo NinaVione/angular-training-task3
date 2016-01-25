@@ -18,10 +18,16 @@ app.service('dataService', ['$rootScope', '$http', '$localStorage', '$sessionSto
           });
       },
 
-      login: function (username, password, callback) {
-        var response = { 
-          success: (username === 'user1' && password === 'user1') || (username === 'user2' && password === 'user2') 
+      login: function (username, password, users, callback) {
+        var response = {
+          success: false
         };
+        for(var user in users) {
+          if(username == users[user].username && password == users[user].password) {
+            response.success = true;
+            break;
+          }
+        }
         if(!response.success) {
             response.message = 'Username or password is incorrect';
         }

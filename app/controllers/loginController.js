@@ -25,15 +25,15 @@ app.controller('loginController', ['$rootScope', '$scope','$state', 'dataService
         }
       } */  
 
-      dataService.login(userData.username, userData.password, function (response) {
-          if(response.success) {
-            dataService.setStorage();
-            dataService.setStorageData(userData);
-            $state.go('home');
-          } else {
-            $scope.error = response.message;
-          }
-        });
+      dataService.login(userData.username, userData.password, $scope.users, function (response) {
+        if(response.success) {
+          dataService.setStorage();
+          dataService.setStorageData(userData);
+          $state.go('home');
+        } else {
+          $scope.error = response.message;
+        }
+      });
     };
 
     $scope.signOut = function () {
