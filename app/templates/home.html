@@ -1,5 +1,5 @@
-<div class="logout" ui-sref="login">
-  <button class="btn btn-info">Logout</button>
+<div class="logout" ui-sref="login" ng-controller="logoutController">
+  <button class="btn btn-info" ng-click="signOut()">Logout</button>
 </div>
 <div class="row">
   <div class="col-md-6 user-info" ng-controller="infoController">
