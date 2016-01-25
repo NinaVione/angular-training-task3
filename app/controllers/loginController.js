@@ -16,15 +16,6 @@ app.controller('loginController', ['$rootScope', '$scope','$state', 'dataService
         password: $scope.password
       };
 
-      /*for(var user in $scope.users) {
-        if(userData.username == $scope.users[user].username && userData.password == $scope.users[user].password) {
-          dataService.setStorage();
-          dataService.setStorageData(userData);
-          $location.path('/home');
-          break;
-        }
-      } */  
-
       dataService.login(userData.username, userData.password, $scope.users, function (response) {
         if(response.success) {
           dataService.setStorage();
@@ -34,10 +25,6 @@ app.controller('loginController', ['$rootScope', '$scope','$state', 'dataService
           $scope.error = response.message;
         }
       });
-    };
-
-    $scope.signOut = function () {
-      dataService.removeStorageData();
     };
   }
 ]);

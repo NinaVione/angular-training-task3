@@ -1,4 +1,5 @@
-app.controller('infoController', ['$rootScope', '$scope',
-  function ($rootScope, $scope)   {
+app.controller('infoController', ['$scope', 'dataService',
+  function ($scope, dataService) {
+    $scope.user = dataService.getStorageData();
   }
 ]);

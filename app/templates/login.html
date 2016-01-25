@@ -1,4 +1,5 @@
 <form name="loginForm" class="form-signin" ng-controller="loginController" novalidate>
+  <div ng-show="error" class="alert alert-danger">{{ error }}</div>
   <h2 class="form-signin-heading">Please sign in</h2>
   <input name="username" ng-model="username" class="form-control" placeholder="Username" required autofocus="">
   <p ng-show="!loginForm.email.$invalid">Username is required.</p>

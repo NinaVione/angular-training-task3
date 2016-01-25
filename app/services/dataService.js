@@ -1,10 +1,6 @@
 app.service('dataService', ['$rootScope', '$http', '$localStorage', '$sessionStorage',
   function ($rootScope, $http, $localStorage, $sessionStorage) {
 
-    var users = [];
-    var authenticated;
-
-
     return {
       getJson: function (callback) {
         $http.get('data/users.json')
@@ -34,16 +30,16 @@ app.service('dataService', ['$rootScope', '$http', '$localStorage', '$sessionSto
         callback(response);
       },
 
-      getUsers: function () {
-        return users;
-      },
-
       setStorage: function () {
         $rootScope.$storage = $localStorage.$default();
       },
 
       setStorageData: function (data) {
         $rootScope.$storage = data;
+      },
+
+      getStorageData: function () {
+        return $rootScope.$storage;
       },
 
       removeStorageData: function () {
