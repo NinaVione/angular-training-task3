@@ -1,5 +1,5 @@
-app.controller('loginController', ['$rootScope', '$scope','$state', 'dataService', '$location',
-  function ($rootScope, $scope, $state, dataService, $location) {
+app.controller('loginController', ['$rootScope', '$scope','$state', 'dataService', '$state',
+  function ($rootScope, $scope, $state, dataService, $state) {
 
     dataService.getJson(function (users) {
       $scope.setUsers(users);
@@ -29,7 +29,7 @@ app.controller('loginController', ['$rootScope', '$scope','$state', 'dataService
           if(response.success) {
             dataService.setStorage();
             dataService.setStorageData(userData);
-            $location.path('/home');
+            $state.go('home');
           } else {
             $scope.error = response.message;
           }
