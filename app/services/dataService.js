@@ -1,5 +1,5 @@
-app.service('dataService', ['$http', 
-  function ($http) {
+app.service('dataService', ['$rootScope', '$http', '$localStorage', '$sessionStorage',
+  function ($rootScope, $http, $localStorage, $sessionStorage) {
 
     var users = [];
     var authenticated;
@@ -18,16 +18,30 @@ app.service('dataService', ['$http',
           });
       },
 
+      login: function (username, password, callback) {
+        var response = { 
+          success: (username === 'user1' && password === 'user1') || (username === 'user2' && password === 'user2') 
+        };
+        if(!response.success) {
+            response.message = 'Username or password is incorrect';
+        }
+        callback(response);
+      },
+
       getUsers: function () {
         return users;
       },
 
-      setAuthentication: function (authenticated) {
-        this.authenticated = authenticated;
+      setStorage: function () {
+        $rootScope.$storage = $localStorage.$default();
       },
 
-      isAuthenticated: function () {
-        return authenticated;
+      setStorageData: function (data) {
+        $rootScope.$storage = data;
+      },
+
+      removeStorageData: function () {
+        delete $localStorage.data;
       }
     }
   }
