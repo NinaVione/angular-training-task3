@@ -1,11 +1,13 @@
 app.service('dataService', ['$rootScope', '$http', '$localStorage', '$sessionStorage',
   function ($rootScope, $http, $localStorage, $sessionStorage) {
-
-    return {
+    
+    $rootScope.$storage = $localStorage;
+    
+    return {    
       getJson: function (callback) {
         $http.get('data/users.json')
           .then(function (result) {
-            users = [];
+            var users = [];
             users = users.concat(result.data);
             callback(users);
           })
@@ -31,7 +33,7 @@ app.service('dataService', ['$rootScope', '$http', '$localStorage', '$sessionSto
       },
 
       setStorage: function () {
-        $rootScope.$storage = $localStorage.$default();
+        $rootScope.$storage = $localStorage;
       },
 
       setStorageData: function (data) {

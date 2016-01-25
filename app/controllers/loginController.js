@@ -3,7 +3,6 @@ app.controller('loginController', ['$rootScope', '$scope','$state', 'dataService
 
     dataService.getJson(function (users) {
       $scope.setUsers(users);
-      console.log(users);
     });
 
     $scope.setUsers = function (users) {
