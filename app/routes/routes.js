@@ -14,6 +14,13 @@ app.config(['$stateProvider', '$urlRouterProvider',
     .state('home', {
       url: '/home',
       templateUrl: 'app/templates/home.html',
+      resolve: {
+        delay: function($q, $timeout) {
+          var delay = $q.defer();
+          $timeout(delay.resolve, 3000);
+          return delay.promise;
+        }
+      }
     })
   }
 ]);

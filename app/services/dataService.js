@@ -3,7 +3,7 @@ app.service('dataService', ['$rootScope', '$http', '$localStorage', '$sessionSto
     
     $rootScope.$storage = $localStorage;
     
-    return {    
+    return {
       getJson: function (callback) {
         $http.get('data/users.json')
           .then(function (result) {

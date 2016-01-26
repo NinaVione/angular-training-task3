@@ -2,16 +2,15 @@
   <div ng-show="error" class="alert alert-danger">{{ error }}</div>
   <h2 class="form-signin-heading">Please sign in</h2>
   <input name="username" ng-model="username" class="form-control" placeholder="Username" required autofocus="">
-  <p ng-show="!loginForm.email.$invalid">Username is required.</p>
+  <p class="required" ng-show="loginForm.username.$invalid">Username is required.</p>
   <input type="password" name="password" ng-model="password" class="form-control" placeholder="Password" required>
-  <p ng-show="!loginForm.password.$invalid">Password is required.</p>
+  <p class="required" ng-show="loginForm.password.$invalid">Password is required.</p>
   <div class="checkbox">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
     <div class="forgot-password">
       <a>Forgot your password?</a>
     </div>
   </div>
-  <button class="btn btn-lg btn-info btn-block" type="submit" ng-click="signIn()" ng-disabled="loginForm.$invalid">Sign in</button>
+  <button class="btn btn-lg btn-info btn-block" type="submit" ng-click="runSpinner(); signIn()" ng-disabled="loginForm.$invalid">Sign in
+  <span loading-directive class="glyphicon glyphicon-refresh loading-icon"></span>
+  </button>
 </form>
