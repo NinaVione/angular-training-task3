@@ -10,15 +10,15 @@ app.controller('loginController', ['$rootScope', '$scope','$state', 'dataService
     }
 
     $scope.signIn = function () {
-      var userData = {
+      var user = {
         username: $scope.username,
         password: $scope.password
       };
 
-      dataService.login(userData.username, userData.password, $scope.users, function (response) {
+      dataService.login(user.username, user.password, $scope.users, function (response) {
         if(response.success) {
           dataService.setStorage();
-          dataService.setStorageData(userData);
+          dataService.setStorageData('user', user);
           $state.go('home');
         } else {
           $scope.error = response.message;

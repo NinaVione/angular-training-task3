@@ -36,16 +36,20 @@ app.service('dataService', ['$rootScope', '$http', '$localStorage', '$sessionSto
         $rootScope.$storage = $localStorage;
       },
 
-      setStorageData: function (data) {
-        $rootScope.$storage = data;
+      setStorageData: function (dataName, dataContent) {
+        $rootScope.$storage[dataName] = dataContent;
       },
 
       getStorageData: function () {
         return $rootScope.$storage;
       },
 
-      removeStorageData: function () {
-        delete $localStorage.data;
+      getStorageDataByField: function (data) {
+        return $rootScope.$storage[data];
+      },
+
+      removeStorageData: function (data) {
+        delete $localStorage[data];
       }
     }
   }

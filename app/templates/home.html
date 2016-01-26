@@ -8,17 +8,20 @@
     </div>
     <div class="info">
       <div>
-        <label>user email: {{ user.email }}</label>
+        <label>user email: {{ $storage.user.email }}</label>
       </div>
       <div>
-        <label>username: {{ $storage.username }}</label>
+        <label>username: {{ $storage.user.username }}</label>
       </div>
       <div>
-        <label>old: {{ user.old }}</label>
+        <label>name: {{ $storage.user.name }}</label>
+      </div>
+      <div>
+        <label>old: {{ $storage.user.old }}</label>
       </div>
     </div>
   </div>
-  <div class="col-md-5 update-user-info">
+  <div class="col-md-5 update-user-info" ng-controller="updateInfoController">
     <div>
       <h2>Update user info</h2>
     </div>
@@ -26,17 +29,17 @@
       <form>
         <div class="form-group">
           <label>Email address</label>
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" ng-model="email" class="form-control" placeholder="Email">
         </div>
         <div class="form-group">
           <label>Name</label>
-          <input type="text" class="form-control" placeholder="Name">
+          <input type="text" ng-model="name" class="form-control" placeholder="Name">
         </div>
         <div class="form-group">
           <label>Old</label>
-          <input type="number" class="form-control" placeholder="Old">
+          <input type="number" ng-model="old" class="form-control" placeholder="Old">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default" ng-click="submitChanges()">Submit</button>
       </form>
     </div>
   </div>
