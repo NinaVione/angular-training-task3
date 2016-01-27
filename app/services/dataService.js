@@ -34,6 +34,11 @@ app.service('dataService', ['$rootScope', '$http', '$localStorage', '$sessionSto
         callback(response);
       },
 
+      isLoggedIn: function () {
+        var r = $rootScope.$storage.user != null;
+        return $rootScope.$storage.user != null;
+      },
+
       setStorage: function () {
         $rootScope.$storage = $localStorage;
       },
