@@ -6,13 +6,17 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
-} 
+}
+
 .forgot-password a {
   cursor: pointer;
 }
 
-.logout, .row {
+.logout, div.row {
   margin-top: 20px;
+  margin-right: 0;
+  margin-left: 0;
+
 }
 
 .logout {
@@ -33,8 +37,24 @@ body {
   .user-info {
     width:100%;
   }
-  .update-user-info { 
+  div.update-user-info { 
     width:100%;
+    border-top: none;
+  }
+
+  form.form-forgot div {
+    display: block;
+  }
+
+  form.form-forgot .input input {
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #ccc;
+    height: 33px;
+  }
+
+  form.form-forgot .button button {
+    border-radius: 0 0 4px 4px;
+    width: 100%;
   }
 }
 
@@ -79,4 +99,38 @@ body {
   -webkit-animation: webkit-spin .7s infinite linear;
   top: 2px;
   margin-left: 7px;
+}
+
+.form-forgot {
+  max-width: 350px;
+  padding: 15px;
+  margin: 0 auto;
+} 
+
+.form-forgot div {
+  display: table-cell;
+}
+
+.form-forgot .input input {
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+  height: 33px;
+}
+
+.form-forgot .button button {
+  border-radius: 0 4px 4px 0;
+}
+
+.form-forgot .button {
+  position: relative;
+  bottom: 2px;
+}
+
+.translate {
+  margin-top: 20px;
+}
+
+.home-translate {
+  position: absolute;
+  top: 0;
 }

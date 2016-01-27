@@ -1,8 +1,9 @@
+
 <div class="logout" ng-controller="logoutController">
   <button ui-sref="login" class="btn btn-info" ng-click="signOut()">{{ 'SIGNOUT' | translate }}</button>
 </div>
 
-<div ng-controller="translateController">    
+<div class="translate home-translate" ng-controller="translateController">    
   <button class="btn btn-info" ng-click="changeToEn()">En</button>
   <button class="btn btn-info" ng-click="changeToRu()">Ru</button>
 </div>

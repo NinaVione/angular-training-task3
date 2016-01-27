@@ -23,7 +23,10 @@ app.config(['$translateProvider',
       EMAIL_ERROR: 'Enter a valid email.',
       NAME_ERROR: 'Name can contain only english symbols (one or two words, each more than 3 symbols).',
       AGE_ERROR: 'Age should be from 18 to 65.',
-      FORGOT_PASSWORD: 'Forgot password?'
+      FORGOT_PASSWORD: 'Forgot password?',
+      BACK_TO_LOGIN: 'Back to login page',
+      REMIND_PASSWORD: 'Remind password',
+      FORGOT_TEXT: 'Please enter your username'
     })
 
     .translations('ru', {
@@ -44,7 +47,10 @@ app.config(['$translateProvider',
       EMAIL_ERROR: 'Введите существующий адрес почты.',
       NAME_ERROR: 'Имя может содержать только английские символы (одно или два слова, каждое не меньше 3 символов).',
       AGE_ERROR: 'Возраст должен быть указан от 18 до 65.',
-      FORGOT_PASSWORD: 'Забыли пароль?'
+      FORGOT_PASSWORD: 'Забыли пароль?',
+      BACK_TO_LOGIN: 'Вернуться на логин страницу',
+      REMIND_PASSWORD: 'Напомнить пароль',
+      FORGOT_TEXT: 'Введите, пожолуйста, имя пользователя'
     });
     
     $translateProvider.preferredLanguage('en');

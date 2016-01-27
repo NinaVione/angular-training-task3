@@ -10,7 +10,7 @@ app.config(['$stateProvider', '$urlRouterProvider',
     .state('login', {
       url: '/login',
       templateUrl: 'app/templates/login.html',
-      controller: 'loginController',
+      controller: 'loginController'
     })
 
     .state('home', {
@@ -23,6 +23,11 @@ app.config(['$stateProvider', '$urlRouterProvider',
           return delay.promise;
         }
       }
+    })
+
+    .state('forgor_password', {
+      url: '/forgot_password',
+      templateUrl: 'app/templates/forgotPassword.html',
     })
   }
 ]);

@@ -34,6 +34,14 @@ app.service('dataService', ['$rootScope', '$http', '$localStorage', '$sessionSto
         callback(response);
       },
 
+      getPassword: function (username, users) {
+        for(var user in users) {
+          if(username == users[user].username) {
+            return users[user].password;
+          }
+        }
+      },
+
       isLoggedIn: function () {
         var r = $rootScope.$storage.user != null;
         return $rootScope.$storage.user != null;
