@@ -1,48 +1,54 @@
-<div class="logout" ui-sref="login" ng-controller="logoutController">
-  <button class="btn btn-info" ng-click="signOut()">Logout</button>
+<div class="logout" ng-controller="logoutController">
+  <button ui-sref="login" class="btn btn-info" ng-click="signOut()">{{ 'SIGNOUT' | translate }}</button>
 </div>
+
+<div ng-controller="translateController">    
+  <button class="btn btn-info" ng-click="changeToEn()">En</button>
+  <button class="btn btn-info" ng-click="changeToRu()">Ru</button>
+</div>
+
 <div class="row">
   <div class="user-info" ng-controller="infoController">
     <div>
-      <h2>User info</h2>
+      <h2>{{ 'USER_INFO' | translate }}</h2>
     </div>
     <div class="info">
       <div>
-        <label>Username: {{ $storage.user.username }}</label>
+        <label>{{ 'USERNAME' | translate }}: {{ $storage.user.username }}</label>
       </div>
       <div>
-        <label>Email address: {{ $storage.user.email }}</label>
+        <label>{{ 'EMAIL_ADDRESS' | translate }}: {{ $storage.user.email }}</label>
       </div>
       <div>
-        <label>Name: {{ $storage.user.name }}</label>
+        <label>{{ 'NAME' | translate }}: {{ $storage.user.name }}</label>
       </div>
       <div>
-        <label>Old: {{ $storage.user.age }}</label>
+        <label>{{ 'AGE' | translate }}: {{ $storage.user.age }}</label>
       </div>
     </div>
   </div>
   <div class="update-user-info" ng-controller="updateInfoController">
     <div>
-      <h2>Update user info</h2>
+      <h2>{{ 'UPDATE_USER_INFO' | translate }}</h2>
     </div>
     <div class="update">
       <form name="updateForm">
         <div class="form-group">
-          <label>Email address</label>
-          <input type="email" name="email" ng-model="email" class="form-control" placeholder="Email">
-          <p ng-show="updateForm.email.$invalid && !updateForm.email.$pristine" class="error">Enter a valid email.</p>
+          <label>{{ 'EMAIL_ADDRESS' | translate }}</label>
+          <input type="email" name="email" ng-model="email" class="form-control" placeholder="{{ 'EMAIL' | translate }}">
+          <p ng-show="updateForm.email.$invalid && !updateForm.email.$pristine" class="error">{{ 'EMAIL_ERROR' | translate }}</p>
         </div>
         <div class="form-group">
-          <label>Name</label>
-          <input name-validator type="text" name="name" ng-model="name" class="form-control" placeholder="Name">
-          <p ng-show="updateForm.name.$invalid" class="error">Name can contain only english symbols (one or two words, each more than 3 symbols).</p>
+          <label>{{ 'NAME' | translate }}</label>
+          <input name-validator type="text" name="name" ng-model="name" class="form-control" placeholder="{{ 'NAME' | translate }}">
+          <p ng-show="updateForm.name.$invalid" class="error">{{ 'NAME_ERROR' | translate }}</p>
         </div>
         <div class="form-group">
-          <label>Age</label>
-          <input age-validator type="text" name="age" ng-model="age" class="form-control" placeholder="Age">
-          <p ng-show="updateForm.age.$invalid" class="error">Age should be from 18 to 65.</p>
+          <label>{{ 'AGE' | translate }}</label>
+          <input age-validator type="text" name="age" ng-model="age" class="form-control" placeholder="{{ 'AGE' | translate }}">
+          <p ng-show="updateForm.age.$invalid" class="error">{{ 'AGE_ERROR' | translate }}</p>
         </div>
-        <button type="submit" class="btn btn-default" ng-click="submitChanges()">Submit</button>
+        <button type="submit" class="btn btn-default" ng-click="submitChanges()">{{ 'SAVE' | translate }}</button>
       </form>
     </div>
   </div>

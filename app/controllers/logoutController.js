@@ -5,6 +5,6 @@ app.controller('logoutController', [ '$scope', 'dataService',
   	
     $scope.signOut = function () {
       dataService.removeStorageData('user');
-    };
+    };   
   }
 ]);
