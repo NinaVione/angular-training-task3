@@ -33,12 +33,10 @@ app.run(['$rootScope', '$state', 'dataService',
     'use strict';
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-    console.log(fromState.name);
-    console.log(toState.name);
-    if (fromState.name == 'login' && toState.name == "home" && !dataService.isLoggedIn()) {
-      event.preventDefault();
-      $state.go('login');
-    }
-  });
+      if (fromState.name == 'login' && toState.name == "home" && !dataService.isLoggedIn()) {
+        event.preventDefault();
+        $state.go('login');
+      }
+    });
   }
 ]);

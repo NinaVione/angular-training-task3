@@ -21,12 +21,21 @@ body {
 
 .user-info {
   float: left;
-  margin-left: 15px;
+  width: 45%;
 }
 
 .update-user-info {
   float: right;
-  margin-right: 15px;
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .user-info {
+    width:100%;
+  }
+  .update-user-info { 
+    width:100%;
+  }
 }
 
 .user-info, .update-user-info {
