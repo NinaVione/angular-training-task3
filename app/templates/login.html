@@ -1,7 +1,7 @@
 <form name="loginForm" class="form-signin" ng-controller="loginController" novalidate>
   <div ng-show="error" class="alert alert-danger">{{ error }}</div>
   <h2 class="form-signin-heading">Please sign in</h2>
-  <input name="username" ng-model="username" class="form-control" placeholder="Username" required autofocus="">
+  <input type="text" name="username" ng-model="username" class="form-control" placeholder="Username" required autofocus="">
   <p class="required" ng-show="loginForm.username.$invalid">Username is required.</p>
   <input type="password" name="password" ng-model="password" class="form-control" placeholder="Password" required>
   <p class="required" ng-show="loginForm.password.$invalid">Password is required.</p>

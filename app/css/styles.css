@@ -43,7 +43,7 @@ body {
   background-color: #f7f7f9;
 }
 
-.required {
+.required, .error {
   color: #d9534f;
 }
 

@@ -11,7 +11,7 @@ app.controller('updateInfoController', ['$scope', 'dataService',
         username: user.username,
         name: $scope.name || currentUser.name,
         email: $scope.email || currentUser.email,
-        old: $scope.old  || currentUser.old
+        age: $scope.age  || currentUser.age
       };
 
       dataService.setStorageData('user', userInfo);
