@@ -1,4 +1,7 @@
 app.directive('nameValidator', function() {
+
+  'use strict';
+  
   return {
     restrict: 'A',
     require: 'ngModel',

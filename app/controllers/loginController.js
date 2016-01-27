@@ -1,5 +1,7 @@
-app.controller('loginController', ['$rootScope', '$scope','$state', 'dataService', '$state',
-  function ($rootScope, $scope, $state, dataService, $state) {
+app.controller('loginController', ['$rootScope', '$scope','$state', 'dataService',
+  function ($rootScope, $scope, $state, dataService) {
+
+    'use strict';
 
     dataService.getJson(function (users) {
       $scope.setUsers(users);

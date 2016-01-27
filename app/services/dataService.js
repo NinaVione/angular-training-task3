@@ -1,6 +1,8 @@
 app.service('dataService', ['$rootScope', '$http', '$localStorage', '$sessionStorage',
   function ($rootScope, $http, $localStorage, $sessionStorage) {
     
+    'use strict';
+
     $rootScope.$storage = $localStorage;
     
     return {

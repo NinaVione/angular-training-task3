@@ -1,9 +1,10 @@
 app.directive('loadingDirective', function($rootScope) {
 
+  'use strict';
+  
   return {
     controller: 'loginController',
     link: function(scope, element) {
-
 
       scope.runSpinner = function () {
         element.removeClass('ng-hide');

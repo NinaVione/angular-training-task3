@@ -1,6 +1,8 @@
 app.controller('updateInfoController', ['$scope', 'dataService',
   function($scope, dataService)   {
 
+    'use strict';
+    
     $scope.submitChanges = function () {
 
       var user = dataService.getStorageData().user;

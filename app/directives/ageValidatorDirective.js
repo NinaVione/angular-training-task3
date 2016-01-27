@@ -1,4 +1,7 @@
 app.directive('ageValidator', function() {
+
+  'use strict';
+  
   return {
     restrict: 'A',
     require: 'ngModel',
